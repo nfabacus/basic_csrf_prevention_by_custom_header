@@ -1,0 +1,19 @@
+{
+  "name": "basic_csrf_prevention_by_custom_session",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nobuyuki Fujioka",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.0.0",
+    "express": "^4.17.3",
+    "hbs": "^4.2.0",
+    "morgan": "^1.10.0",
+    "uuid": "^8.3.2"
+  }
+}

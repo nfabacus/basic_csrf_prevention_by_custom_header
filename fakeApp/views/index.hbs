@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fake App: Example Form</h1>
+    <form id="exampleForm" action="http://localhost:3000/api/submit" method="post">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname">
+    </form>
+<!--    <script>-->
+<!--        const form = document.getElementById('exampleForm');-->
+<!--        form.addEventListener("submit", (e) => {-->
+<!--            e.preventDefault();-->
+<!--            console.log('submit from fake app!');-->
+<!--            const formData = new URLSearchParams(new FormData(form));-->
+<!--            fetch('http://localhost:3000/api/submit', {-->
+<!--                method: 'POST',-->
+<!--                body: formData,-->
+<!--                headers: {-->
+<!--                    "x-csrf-token": "def123"-->
+<!--                },-->
+<!--            })-->
+<!--                    .then(res => res.json())-->
+<!--                    .then(result => console.log('result >>>', result))-->
+<!--                    .catch(err => { console.log(err) });-->
+<!--        })-->
+<!--    </script>-->
+</body>
+</html>
+

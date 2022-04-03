@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--    <meta name="csrf_token" content="{{csrf_token}}">-->
+    <title>Document</title>
+</head>
+<body>
+    <h1>App: Example Form</h1>
+    <form id="exampleForm" action="/api/submit" method="post">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname">
+    </form>
+    <script>
+        const form = document.getElementById('exampleForm');
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            // const csrfToken = document.querySelector('meta[name="csrf_token"]').content;
+            // console.log('submit! csrf_token >>', csrfToken);
+            const formData = new URLSearchParams(new FormData(form));
+            fetch('/api/submit', {
+                method: 'POST',
+                // headers: {
+                //   "x-csrf-token": csrfToken
+                // },
+                headers: {
+                    "x-csrf-token": "abc123"  // add a random string here.
+                },
+                body: formData
+            })
+                    .then(res => res.json())
+                    .then(result => console.log('result >>>', result))
+                    .catch(err => { console.log(err) });
+        })
+    </script>
+</body>
+</html>
+
